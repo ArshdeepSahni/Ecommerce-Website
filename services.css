@@ -1,0 +1,29 @@
+*
+{
+    margin: 0;
+    padding: 0;
+}
+body
+{
+    font-family: sans-serif;
+}
+#all-services
+{
+    background-image:  image-set();
+    padding: 0px 0;
+    background-image: linear-gradient(to right top,black,black,black,black,black,black,black,black,red,red,red);;
+}
+.services-all img 
+{
+    width: 100px;
+    transition: 1s;
+}
+.services-all img:hover 
+{
+    transform: scale3d(2.5,2.5,0.5) translatey(0px) rotatex(-720deg);
+    width: 100px;
+}
+.services-all p
+{
+    right: 700px;
+}

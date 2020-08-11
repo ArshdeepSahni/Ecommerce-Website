@@ -1,0 +1,1751 @@
+<html> 
+<head>
+<title>WEBSITE : THE BRAND</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+<script src="onclick.js"></script>
+<link href="product.html">
+</head>
+<style>
+  *{
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+  }
+  body{
+    scroll-behavior: smooth;
+    background: rgb(215, 215, 215);
+    color: rgb(0, 0, 0);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+  #dark{
+    top: 380px;
+    background-color: rgb(57, 57, 65);
+  }
+  #bright{
+    top: 440px;
+    background-color: rgb(174, 174, 188);
+  }
+  #side-menu{
+    background: linear-gradient(to top,rgba(0,0,0,0.800),rgba(0,0,0,0.800),rgba(0,0,0,0.800),rgba(0,0,0,0.800),rgba(0,0,0,0.800),black);
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    transition: 2s;
+    display: none;
+  }
+  #body{
+    transition: 1s;
+  }
+  #slider{
+    transition: 1s;
+  }
+  #category{
+    background: linear-gradient(to right,transparent,rgba(0, 0, 255, 0.432),blue,rgba(0, 0, 255, 0.466),transparent);
+    transition: 1s;
+    margin-left: -40px;
+  }
+  #on-sale{
+    background-size: 100%;
+    margin-left: 10px;
+    transition: 1s;
+  }
+  #new-products{
+    margin-left: 10px;
+    transition: 1s;
+  }
+  #features{
+    background: linear-gradient(to right,transparent,blue,transparent);
+    transition: 1s;
+  }
+  .top-nav-bar{
+    height: 80px;
+    top: 0;
+    position: sticky;
+    background: linear-gradient(to right,white,#2874f0,#2874f0,#2874f0,#2874f0);
+    margin-bottom: 20px;
+    border-bottom: 3px solid orange;
+    z-index: 2;
+  }
+  .logo{
+    height: 40px;
+    margin: 5px 10px;
+    animation: rotate 5s infinite ease-in-out;
+    transition: 0s;
+    cursor: pointer;
+  }
+  @keyframes rotate {
+    100%{
+      transform: rotate(360deg);
+    }
+  }
+  .form-control{
+    transition: 1s;
+    margin-top: 9px;
+    margin-left: 30px;
+    color: orange;
+    border-top-left-radius: 20px !important;
+    border-bottom-left-radius: 20px !important;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    box-shadow: none !important;
+    background: white;
+  }
+  .input-group-text{
+    background: rgb(255, 255, 255);
+    border: 0;
+    margin: 8.5px 15px 3px 0;
+    color: orange;
+    transition: 1s;
+    border-top-left-radius: 0px !important;
+    border-bottom-left-radius: 0px !important;
+    border-top-right-radius: 20px !important;
+    border-bottom-right-radius: 20px !important;
+    cursor: pointer;
+  }
+  .input-group-text:hover{
+    background: orange;
+  }
+  .search-box{
+    color: rgb(0, 98, 255);
+    height: 50px;
+    display: inline-flex;
+    width: 50%;
+  }
+  .fa-search{
+    color: rgb(0, 102, 255);
+    text-align: center;
+    margin-bottom: 5px;
+    margin-right: 5px;
+    transition: 1s;
+  }
+  .fa-search:hover{
+    color: rgb(0, 102, 255);
+  }
+  .menu-bar{
+    width: 40%;
+    height: 57px;
+    float: right;
+  }
+  .menu-bar ul{
+    display: inline-flex;
+    float: right;
+    height: auto;
+  }
+  .menu-bar ul li{
+    list-style-type: none;
+    padding: 15px 20px;
+    text-align: center;
+    background: transparent;
+    cursor: pointer;
+  }
+  .menu-bar ul li:hover{
+    list-style-type: none;
+    padding: 15px 20px;
+    text-align: center;
+    background: rgba(132, 161, 229, 0);
+    cursor: pointer;
+  }
+  .menu-bar ul li a{
+    font-size: 18px;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+  .menu-bar ul li a:hover{
+    color: orange;
+  }
+  .fa-shopping-cart{
+    padding-right: 10px;
+  }
+  .fa-user-plus{
+    padding-right: 10px;
+  }
+  .fa-sign-in{
+    padding-right: 10px;
+  }
+  .fa-user-circle{
+    padding-right: 10px;
+  }
+  @media only screen and (max-width: 1200px){
+    .top-nav-bar{
+      height: 100px;
+      border-bottom: 1px solid orange;
+      width: 100%;
+    }
+    .search-box{
+      width: 100%;
+    }
+    .menu-bar{
+      width: 100%;
+    }
+    .menu-bar ul{
+      margin: 10px 0;
+      width: 100%;
+    }
+    .menu-bar ul li{
+      height: 40px;
+      width: 100% auto;
+    }
+    .menu-bar ul li a{
+      font-size: 16px;
+    }
+    
+  }
+  .side-menu{
+    scroll-behavior: smooth;
+    margin-left: 10px;
+    transition: 1s ease-in-out;
+    height: fit-content;
+    width: 19%;
+    font-size: 22px;
+    float: left;
+  }
+  .side-signin{
+    background: orange;
+    width: 500px;
+    cursor: pointer;
+    padding-left: 0%;
+    padding-right: 11.5%;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    transition:1s;
+    color: rgb(31, 71, 248) !important;
+  }
+  .side-signin:hover{
+    background: rgb(31, 71, 248);
+    color: white !important;
+  }
+  .head{
+    padding: 5px;
+    color: #2874f0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+  .side-menu ul{
+    margin-left: 10px;
+    margin-top: 2px;
+    padding-bottom: 4px;
+    padding-left: 20px;
+  }
+  .side-menu ul li1{
+    border-radius: 50px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    background: #0177ff;
+    list-style-type: none;
+    font-weight: bold;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: 1s;
+    font-size: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin-left: -25px;
+  }
+  .side-menu ul li1:hover{
+    background: rgb(255, 255, 255);
+  }
+  .side-menu ul li{
+    list-style-type: none;
+    font-size: 25px;
+  }
+  .side-menu ul lish a{
+    list-style-type: none;
+    margin-top: 10px;
+    cursor: pointer;
+    margin-left: -20px;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-top: 5px;
+  }
+  .side-menu ul lish a:hover{
+    color: orange;
+  }
+  .side-menu ul li a{
+    color: rgb(255, 255, 255);
+    list-style-type: none;
+    margin-top: 10px;
+    cursor: pointer;
+    margin-left: -20px;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .side-menu ul li:hover a{
+    color: orange !important ;
+  }
+  .side-menu ul li1 + .ul{
+    display: inline-flex;
+    margin-left: -20px;
+    opacity: 100%;
+    z-index: 10;
+    top: 77px;
+  }
+  .side-menu ul li1:hover + .ul{
+    display: flex;
+    opacity: 100%;
+    height: 23%;
+    margin-left: 0px;
+    padding: 0 100px 10px 10px;
+    position: sticky;
+    background: rgba(26, 25, 25, 0.828);
+  }
+  .fa-angle-double-right{
+    opacity: 100%;
+    transition: 1s;
+  }
+  .fa-angle-double-right:hover{
+    opacity: 100%;
+    transform: translateX(10px);
+  }
+  #menu-btn{
+    border: 5px solid orange;
+    padding: 5px;
+    cursor: pointer;
+    position: fixed;
+    transition: 1s;
+    font-size: 30px;
+    margin: 10px;
+    color: rgb(0, 0, 0);
+    display: block;
+  }
+  #menu-btn:hover{
+    border: 5px solid rgb(22, 111, 255);
+    color:rgb(22, 111, 255) ;
+  }
+  #close-btn{
+    width: 45px;
+    padding: 5px;
+    border: 5px solid orange;
+    position: static;
+    transition: 1s;
+    font-size: 30px;
+    margin: 10px;
+    color: rgb(0, 0, 0);
+    display: none;
+  }
+  #close-btn:hover{
+    border: 5px solid rgb(22, 111, 255);
+    color: red;
+  }
+  @media only screen and (max-width: 1200px){
+    #menu-btn{
+      transition: 1s;
+      display: block;
+      border: 3px solid rgb(0, 102, 255);
+      padding-right: 0;
+    }
+    #close-btn{
+      transition: 1s;
+      border: 3px solid rgb(0, 102, 255);
+      padding-right: 0;
+    }
+    .fa-times{
+      position: fixed;
+      transition: 1s;
+      width: 40px;
+      padding: 5px;
+      padding-right: 10px;
+    }
+    .fa-bars{
+      position: fixed;
+      transition: 1s;
+      width: 40px;
+      padding: 5px;
+      padding-right: 10px;
+
+    }
+    .side-menu{
+      display: none;
+      width: 29%;
+    }
+  .side-menu ul li{
+    transition: 1s;
+    list-style-type: none;
+    font-weight: bold;
+    margin-top: 10px;
+    cursor: pointer;
+    font-size: 13px;
+    border-radius: 20px;
+    padding-left: 0px;
+    padding-right: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+  .side-menu ul li1{
+    width: auto;
+    margin-left: -30px;
+  }
+  .side-menu ul li1 + .ul{
+    display: block;
+    width: auto;
+  }
+  .side-menu ul li1:hover + .ul{
+    display: block;
+    width: auto;
+  }
+  }
+</style>
+<body id="body">
+
+
+
+
+
+<!----------------------------------------navbar------------------------------------>
+<style>
+    #mySidenav a {
+      color: transparent;
+      position: fixed;
+      left: 1400px;
+      transition: 0.3s;
+      padding: 15px;
+      width: 100px;
+      text-decoration: none;
+      font-size: 15px;
+      border-radius: 10px 0px 0px 10px;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+    
+    #mySidenav a:hover 
+    {
+      transition: 0.3s ease-in-out;
+      text-align: center;
+      left: 1350px;
+      color: rgb(255, 255, 255);
+    }
+    
+    #home {
+      top: 80px;
+      background-color: rgb(0, 132, 255);
+    }
+    
+    #code-nav {
+      top: 140px;
+      background-color: rgb(6, 99, 205);
+    }
+    
+    #reviews {
+      top: 200px;
+      background-color: rgb(4, 79, 164)
+    }
+    #aboutus {
+      top: 260px;
+      background-color: rgb(3, 66, 139);
+    }
+    #contact {
+      color: black;
+      top: 320px;
+      background-color: rgb(4, 51, 106);
+    }
+    .plus{
+      color: white;
+      font-size: 20px;
+      transition: 0.5s;
+    }
+    .plus:hover{
+      color:orange
+    }
+    @media only screen and (max-width: 1200px){
+      #mySidenav a {
+      color: rgb(255, 255, 255);
+      position: fixed;
+      left: 98%;
+      transition: 0.5s;
+      padding: 15px;
+      width: 100px;
+      text-decoration: none;
+      font-size: 15px;
+      border-radius: 10px 0px 0px 10px;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+    
+    #mySidenav a:hover {
+      left: 90%;
+      color: rgb(255, 255, 255);
+    }
+    
+    #home {
+      top: 80px;
+      background-color: rgb(0, 132, 255);
+    }
+    
+    #code-nav {
+      top: 140px;
+      background-color: rgb(6, 99, 205);
+    }
+    
+    #reviews {
+      top: 200px;
+      background-color: rgb(4, 79, 164)
+    }
+    #aboutus {
+      top: 260px;
+      background-color: rgb(3, 66, 139);
+    }
+    #contact {
+      color: black;
+      top: 320px;
+      background-color: rgb(4, 51, 106);
+    }
+    }
+    </style>
+    <!--/head-->
+    <!--body-->
+    
+    <div id="mySidenav" class="sidenav">
+      <a href="#category" id="home">Categories</a>
+      <a href="#on-sale" id="code-nav">Sale</a>
+      <a href="#new-products" id="reviews">New Arrivals</a>
+      <a href="#features" id="aboutus">Features</a>
+      <a href="#footer" id="contact">Contact</a>
+      <a href="#" id="dark" onclick="darkmode()">Dark Mode</a>
+      <a href="#" id="bright" onclick="brightmode()">Bright Mode</a>
+    </div>
+    
+    <div style="margin-left:80px;">
+    </div>
+<!--------------------------------------------navbar ends------------------------------------->
+
+
+
+
+
+<div class="top-nav-bar" id="navbar">
+<div class="search-box">
+<a href="index.html"><img src="coderror2.png" class="logo"></a>
+<a href="index.html"><i><h1 class="head" id="head">CRUX</h1></i></a>
+<a href="#" class="plus"><i>Plus</i>+</a>
+<input type="text" class="form-control" placeholder="search here...">
+<span class="input-group-text"><i class="fa fa-search"></i></span>
+</div>
+<div class="menu-bar">
+<ul>
+  <li><a href="#"><i class="fa fa-shopping-cart"></i>Cart</a><b id="output"></b></li>
+  <li><a href="#"><i class="fa fa-user-plus"></i>Signup</a></li>
+  <li><a href="#"><i class="fa fa-sign-in"></i>Log-In</a></li>
+  <li><a href="#"><i class="fa fa-user-circle"></i>User</a></li>
+</ul>
+</div>
+</div>
+<div>
+  <i class="fa fa-bars" id="menu-btn" onclick="openmenu()"></i>
+  <i class="fa fa-times" id="close-btn" onclick="closemenu()"></i>
+</div>
+<section class="header" id="begin">
+  <div class="side-menu" id="side-menu">
+    <a class="side-signin" style="font-size: 30px;"><i class="fa fa-user-circle"></i>Hello. Sign in</a>
+    <ul>
+      <li1>On Sale<i class="fa fa-angle-down"></i></li1><br>
+      <ul class="ul">
+        <li><a href="#">submenu1</a></li>
+        <li><a href="#">submenu1</a></li>
+        <li><a href="#">submenu1</a></li>
+        <lish><a href="#">show all</a></lish>
+      </ul><br>
+      <li1>Mobiles<i class="fa fa-angle-down"></i></li1><br>
+      <ul class="ul">
+        <li><a href="#">submenu1</a></li>
+        <li><a href="#">submenu1</a></li>
+        <li><a href="#">submenu1</a></li>
+        <lish><a href="#">show all</a></lish>
+      </ul><br>
+      <li1>Laptops<i class="fa fa-angle-down"></i></li1><br>
+      <ul class="ul">
+        <li><a href="#">submenu1</a></li>
+        <li><a href="#">submenu1</a></li>
+        <li><a href="#">submenu1</a></li>
+        <lish><a href="#">show all</a></lish>
+      </ul><br>
+      <li1>On Sale<i class="fa fa-angle-down"></i></i></li1><br>
+      <ul class="ul">
+        <li><a href="#">submenu1</a></li>
+        <li><a href="#">submenu1</a></li>
+        <li><a href="#">submenu1</a></li>
+        <lish><a href="#">show all</a></lish>
+      </ul><br>
+      <li1>Mobiles<i class="fa fa-angle-down"></i></li1><br>
+      <ul class="ul">
+        <li><a href="#">submenu1</a></li>
+        <li><a href="#">submenu1</a></li>
+        <li><a href="#">submenu1</a></li>
+        <lish><a href="#">show all</a></lish>
+      </ul><br>
+      <li1>Laptops<i class="fa fa-angle-down"></i></li1><br>
+      <ul class="ul">
+        <li><a href="#">submenu1</a></li>
+        <li><a href="#">submenu1</a></li>
+        <li><a href="#">submenu1</a></li>
+        <lish><a href="#">show all</a></lish>
+      </ul><br>
+      <li1>On Sale<i class="fa fa-angle-down"></i></li1><br>
+      <ul class="ul">
+        <li><a href="#">submenu1</a></li>
+        <li><a href="#">submenu1</a></li>
+        <li><a href="#">submenu1</a></li>
+        <lish><a href="#">show all</a></lish>
+      </ul><br>
+      <li1>Mobiles<i class="fa fa-angle-down"></i></li1><br>
+      <ul class="ul">
+        <li><a href="#">submenu1</a></li>
+        <li><a href="#">submenu1</a></li>
+        <li><a href="#">submenu1</a></li>
+        <lish><a href="#">show all</a></lish>
+      </ul><br>
+      <li1>Laptops<i class="fa fa-angle-down"></i></li1><br>
+      <ul class="ul">
+        <li><a href="#">submenu1</a></li>
+        <li><a href="#">submenu1</a></li>
+        <li><a href="#">submenu1</a></li>
+        <lish><a href="#">show all</a></lish>
+      </ul><br>
+      <li1>On Sale<i class="fa fa-angle-down"></i></li1><br>
+      <ul class="ul">
+        <li><a href="#">submenu1</a></li>
+        <li><a href="#">submenu1</a></li>
+        <li><a href="#">submenu1</a></li>
+        <lish><a href="#">show all</a></lish>
+      </ul><br>
+      <li1>Mobiles<i class="fa fa-angle-down"></i></li1><br>
+      <ul class="ul">
+        <li><a href="#">submenu1</a></li>
+        <li><a href="#">submenu1</a></li>
+        <li><a href="#">submenu1</a></li>
+        <lish><a href="#">show all</a></lish>
+      </ul><br>
+      <li1>Laptops<i class="fa fa-angle-down"></i></li1><br>
+      <ul class="ul">
+        <li><a href="#">submenu1</a></li>
+        <li><a href="#">submenu1</a></li>
+        <li><a href="#">submenu1</a></li>
+        <lish><a href="#">show all</a></lish>
+      </ul><br>
+      <li1>On Sale<i class="fa fa-angle-down"></i></li1><br>
+      <ul class="ul">
+        <li><a href="#">submenu1</a></li>
+        <li><a href="#">submenu1</a></li>
+        <li><a href="#">submenu1</a></li>
+        <lish><a href="#">show all</a></lish>
+      </ul><br>
+      <li1>Mobiles<i class="fa fa-angle-down"></i></li1><br>
+      <ul class="ul">
+        <li><a href="#">submenu1</a></li>
+        <li><a href="#">submenu1</a></li>
+        <li><a href="#">submenu1</a></li>
+        <lish><a href="#">show all</a></lish>
+      </ul><br>
+      <li1>Laptops<i class="fa fa-angle-down"></i></li1><br>
+      <ul class="ul">
+        <li><a href="#">submenu1</a></li>
+        <li><a href="#">submenu1</a></li>
+        <li><a href="#">submenu1</a></li>
+        <lish><a href="#">show all</a></lish>
+      </ul><br>
+    </ul>
+  </div>
+
+  <!---------------slider---------------------------------->
+  <div class="slider">
+    <div id="slider" class="carousel slide carousel-fade" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="i11.jpeg" class="d-block w-100">
+        </div>
+        <div class="carousel-item 1">
+          <img src="ledtv.jpeg" class="d-block w-100">
+        </div>
+        <div class="carousel-item 2">
+          <img src="drones.jpeg" class="d-block w-100">
+        </div>
+        <div class="carousel-item 3">
+          <img src="cloth2.png" class="d-block w-100">
+        </div>
+        <div class="carousel-item 4">
+          <img src="beats.jpeg" class="d-block w-100">
+        </div>
+      </div>
+      <ol class="carousel-indicators">
+        <li data-target="#slider" data-slide-to="0" class="active"></li>
+        <li data-target="#slider" data-slide-to="1"></li>
+        <li data-target="#slider" data-slide-to="2"></li>
+        <li data-target="#slider" data-slide-to="3"></li>
+        <li data-target="#slider" data-slide-to="4"></li>
+      </ol>
+    </div>
+  </div> 
+</section>
+
+
+<style>
+.slider{
+  width: 88%;
+  height: 100% auto;
+  margin-left: 58px;
+  padding: 0 10px;
+}
+.carousel{
+  transition: 1s;
+  box-shadow: 1px 1px 20px rgb(34, 35, 37);
+}
+.carousel:hover{
+  box-shadow: 1px 1px 50px 5px rgb(34, 35, 37);
+}
+.carousel-indicators{
+  width: 100%;
+  margin-left: 0px;
+  transition: 0.5s;
+}
+.carousel-indicators li{
+  height: 5px !important;
+  margin-left: 0px;
+  transition: 0.5s;
+  background-color: #000;
+}
+.carousel-indicators li:hover{
+  background-color: orange;
+  border-radius: 50px;
+}
+@media only screen and (max-width: 1200px){
+  .slider{
+    position:absolute;
+    width: 100% auto;
+    height: 100% auto;
+    margin-left: 9%;
+    bottom: 30%;
+  }
+  .carousel{
+  box-shadow: 1px 1px 10px 3px rgb(34, 35, 37);
+}
+.carousel-indicators li{
+  height: 0.1px;
+  width: 50px;
+  background: rgb(0, 102, 255);
+  transition: 0.5s;
+}
+.carousel-indicators li:hover{
+  background: black;
+  border-radius: 50px;
+}
+}
+</style>
+
+<!----------------category-------------------->
+
+<section class="category">
+  <div class="title-box-1">
+    <h1 class="cat">Categories</h1>
+  </div>
+  <div class="container" id="category">
+      <div class="row">
+        <div class="col-md-3 cloths">
+          <a href="#"><img src="cloth3.png" style="width: 80%;"><br><b>Fashion</b></a>
+        </div>
+        <div class="col-md-3 electronics">
+          <a href="#"><img src="electronics.png" style="margin-top: 5px;"><br><b style="margin-left: 15%;">Electronics</b></a>
+        </div>
+        <div class="col-md-3 toys">
+          <a href="#"><img src="toys3.png" style="width: 110%; margin-left: -50px; margin-top: 20px;"><br><b>Games & Toys</b></a>
+        </div>
+        <div class="col-md-3 books">
+          <a href="#"><img src="books.png" style="margin-top: 25px; width: 100%;"><br><b>Books & E-Books</b></a>
+        </div>
+      </div>
+  </div>
+</section>
+<style>
+  .col-md-3 b{
+    color: white;
+    margin-left: 25%;
+    font-size: 20px;
+    text-decoration: none;
+    transition: 0.5s;
+  }
+  .col-md-3:hover b{
+    color: orange;
+    margin-left: 25%;
+    font-size: 25px;
+    text-decoration: none;
+  }
+  .col-md-3 a{
+    text-decoration: none;
+  }
+  .title-box-1{
+    color: white;
+    background:rgb(0, 98, 255);
+    width: 180px;
+    padding: 4px 10px;
+    height: 50px;
+    margin-bottom: 30px;
+    margin-left: 600px;
+    display: flex;
+  }
+  .title-box-1::after{
+    content: "";
+    border-bottom: 25px solid rgb(0,98,255);
+    border-top: 25px solid rgb(0,98,255);
+    border-right: 90px solid rgba(0, 0, 0, 0);
+    position: absolute;
+    display: flex;
+    margin-top: -4px;
+    margin-left: 170px;
+  }
+  .title-box-1::before{
+    content: "";
+      border-bottom: 25px solid rgb(0, 98, 255);
+      border-top: 25px solid rgb(0, 98, 255);
+      border-left: 90px solid rgba(188, 56, 56, 0);
+      position: absolute;
+      display: flex;
+      margin-top: -4px;
+      margin-left: -100px;
+  }
+  .col-md-3{
+    right: -50px;
+  }
+  .category{
+    margin: 50px 50px;
+  }
+  .category img{
+    background: rgba(128, 128, 128, 0);
+    width: 70%;
+    transition: 1s;
+    cursor: pointer;
+  }
+  .category img:hover{
+    transform: scale(1.1);
+    background: transparent;
+  }
+  @media only screen and (max-width: 1250px){
+  #category{
+    background: linear-gradient(to bottom,transparent,rgba(0, 0, 255, 0.5),blue,rgba(0, 0, 255, 0.479),transparent);
+    margin-left: 3%;
+   }
+  .col-md-3{
+    left: 200px;
+    top: 55px;
+    padding-bottom: 50px;
+  }
+  .category{
+    width: auto;
+    margin-top: 500px;
+    height: 100% auto;
+
+  }
+  .cloths{
+    margin-left: -150px;
+  }
+  .electronics{
+    margin-left: -130px;
+  }
+  .toys{
+    margin-left: -150px;
+  }
+.books{
+    margin-left: -180px;
+  }
+  .category img:hover{
+    background: transparent;
+    transform: scale(1.1);
+    padding: auto;
+  }
+  }
+</style>
+<!--------------------------------------on sale----------------------------->
+<section class="on-sale">
+  <div id="on-sale">
+  <div class="container">
+    <div class="title-box">
+      <h1 style="margin-left: 30px;">On Sale</h1>
+    </div>
+    <div class="row" id="row1">
+      <div class="col-md-4">
+        <div class="product-top">
+          <a href="product.html"><img src="apple.png"/></a>
+          <div class="overlay-right">
+            <button type="button" class="btn btn-primary" title="Quick Shop"><i class="fa fa-eye"></i></button>
+            <button type="button" class="btn btn-primary" title="Add To Wishlist"><i class="fa fa-heart-o"></i></button>
+            <button type="button" onclick="cart()" class="btn btn-primary" title="Add To  Cart"><i class="fa fa-shopping-cart"></i></button>
+          </div>
+        </div>
+        <div class="product-bottom">
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <h2>title</h2>
+          <h5>$0.00</h5>
+        </div>
+    </div>
+    <div class="col-md-4">
+      <div class="product-top">
+        <a href="product.html"><img src="apple.png"/></a>
+        <div class="overlay-right">
+          <button type="button" class="btn btn-primary" title="Quick Shop"><i class="fa fa-eye"></i></button>
+          <button type="button" class="btn btn-primary" title="Add To Wishlist"><i class="fa fa-heart-o"></i></button>
+          <button type="button" onclick="cart()" class="btn btn-primary" title="Add To  Cart"><i class="fa fa-shopping-cart"></i></button>
+        </div>
+      </div>
+      <div class="product-bottom">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <h2>title</h2>
+        <h5>$0.00</h5>
+      </div>
+  </div>
+  <div class="col-md-4">
+    <div class="product-top">
+      <a href="product.html"><img src="apple.png"/></a>
+      <div class="overlay-right">
+        <button type="button" class="btn btn-primary" title="Quick Shop"><i class="fa fa-eye"></i></button>
+        <button type="button" class="btn btn-primary" title="Add To Wishlist"><i class="fa fa-heart-o"></i></button>
+        <button type="button" onclick="cart()" class="btn btn-primary" title="Add To  Cart"><i class="fa fa-shopping-cart"></i></button>
+      </div>
+    </div>
+    <div class="product-bottom">
+      <i class="fa fa-star"></i>
+      <i class="fa fa-star"></i>
+      <i class="fa fa-star"></i>
+      <i class="fa fa-star"></i>
+      <i class="fa fa-star"></i>
+      <h2>title</h2>
+      <h5>$0.00</h5>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="product-top">
+      <a href="product.html"><img src="apple.png"/></a>
+      <div class="overlay-right">
+        <button type="button" class="btn btn-primary" title="Quick Shop"><i class="fa fa-eye"></i></button>
+        <button type="button" class="btn btn-primary" title="Add To Wishlist"><i class="fa fa-heart-o"></i></button>
+        <button type="button" onclick="cart()" class="btn btn-primary" title="Add To  Cart"><i class="fa fa-shopping-cart"></i></button>
+      </div>
+    </div>
+    <div class="product-bottom">
+      <i class="fa fa-star"></i>
+      <i class="fa fa-star"></i>
+      <i class="fa fa-star"></i>
+      <i class="fa fa-star"></i>
+      <i class="fa fa-star"></i>
+      <h2>title</h2>
+      <h5>$0.00</h5>
+    </div>
+    </div>
+    <div class="col-md-4">
+      <div class="product-top">
+        <a href="product.html"><img src="apple.png"/></a>
+        <div class="overlay-right">
+          <button type="button" class="btn btn-primary" title="Quick Shop"><i class="fa fa-eye"></i></button>
+          <button type="button" class="btn btn-primary" title="Add To Wishlist"><i class="fa fa-heart-o"></i></button>
+          <button type="button" onclick="cart()" class="btn btn-primary" title="Add To  Cart"><i class="fa fa-shopping-cart"></i></button>
+        </div>
+      </div>
+      <div class="product-bottom">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <h2>title</h2>
+        <h5>$0.00</h5>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="product-top">
+        <a href="product.html"><img src="apple.png"/></a>
+        <div class="overlay-right">
+          <button type="button" class="btn btn-primary" title="Quick Shop"><i class="fa fa-eye"></i></button>
+          <button type="button" class="btn btn-primary" title="Add To Wishlist"><i class="fa fa-heart-o"></i></button>
+          <button type="button" onclick="cart()" class="btn btn-primary" title="Add To  Cart"><i class="fa fa-shopping-cart"></i></button>
+        </div>
+      </div>
+      <div class="product-bottom">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <h2>title</h2>
+        <h5>$0.00</h5>
+      </div>
+    </div>
+    </div>
+</section>
+
+
+<style>
+  .title-box{
+    color: white;
+    background:rgb(0, 99, 255);
+    width: 180px;
+    padding: 4px 10px;
+    text-align: center;
+    height: 50px;
+    margin-bottom: 30px;
+    display: flex;
+    margin-left: 500px;
+  }
+  .title-box h1{
+    font-size: 34px;
+  }
+  .title-box::after{
+    content: "";
+    border-bottom: 25px solid rgb(0, 98, 255);
+    border-top: 25px solid rgb(0, 98, 255);
+    border-right: 90px solid rgba(0, 0, 0, 0);
+    position: absolute;
+    display: flex;
+    margin-top: -4px;
+    margin-left: 170px;
+  }
+  .title-box::before{
+    content: "";
+      border-bottom: 25px solid rgb(0, 98, 255);
+      border-top: 25px solid rgb(0, 98, 255);
+      border-left: 90px solid rgba(0, 0, 0, 0);
+      position: absolute;
+      display: flex;
+      margin-top: -4px;
+      margin-left: -100px;
+  }
+  .col-md-4{
+    
+    right: -47px;
+  }
+  #row1{
+    background-size: 100%;
+    border-radius: 10px;
+    box-shadow: 0px 0px 100px black;
+    padding-top: 10%;
+    padding-right: 10%;
+    padding-left:5%;
+  }
+  .product-top{
+    width: 100%;
+  }
+  .product-top img{
+    background: grey;
+  }
+  .overlay-right{
+    display: block;
+    opacity: 0;
+    position: absolute;
+    top: 10%;
+    margin-left: 0;
+    width: 70px;
+  }
+  .overlay-right .fa{
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.575);
+    color: rgb(0, 0, 0);
+    height: 100% !important;
+    width: 70%;
+    font-size: 20px;
+    padding-bottom: 150px;
+    margin-top: 0%;
+    margin-bottom: 0%;
+    transition: 0.5s;
+  }
+  .overlay-right .fa:hover{
+    background: black;
+    color: rgb(255, 255, 255);
+    background: transparent;
+  }
+  .overlay-right .btn-primary{
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+
+  }
+  .product-top:hover .overlay-right{
+    opacity: 1;
+    margin-left: 5%;
+    transition: 1s;
+  }
+  .product-bottom .fa{
+    color: orange;
+    font-size: 10px;
+  }
+  .product-bottom h1{
+    font-size: 30px;
+    font-weight: bold;
+  }
+  .product-bottom h5{
+    font-size: 20px;
+    padding-bottom: 50px;
+  }
+  @media only screen and (max-width: 1200px){
+    .col-md-4{
+    left: auto;
+    padding-left: auto;
+  }
+  #row1{
+    width: 100% auto;
+  }
+    .title-box{
+    color: white;
+    background:rgb(0, 98, 255);
+    width: 180px;
+    padding: 4px 0px;
+    height: 60px;
+    bottom: 0px;
+    position: relative;
+    display: flex;
+    }
+    .title-box::after{
+    content: "";
+    border-bottom: 60px solid rgb(0, 98, 255);
+    border-right: 90px solid rgba(0, 0, 0, 0);
+    position: absolute;
+    display: flex;
+    margin-top: -4px;
+    margin-left: 180px;
+  }
+  .col-md-4{
+    top: 00px;
+  }  
+  .product-top{
+    width: 100% auto;
+  }
+  .product-top img{
+    background: grey;
+    padding: 0;
+  }
+  .overlay-right{
+    display: block;
+    opacity: 0;
+    position: absolute;
+    top: 10%;
+    margin-left: 0;
+    width: 70px;
+  }
+  .overlay-right .fa{
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.575);
+    color: #000;
+    height: 35px;
+    width: 35px;
+    font-size: 20px;
+    padding: 7px;
+    margin-top: 5%;
+    margin-bottom: 5%;
+  }
+  .overlay-right .btn-primary{
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+
+  }
+  .product-top:hover .overlay-right{
+    opacity: 1;
+    margin-left: 5%;
+    transition: 1s;
+  }
+  .product-bottom .fa{
+    color: orange;
+    font-size: 10px;
+  }
+  .product-bottom h2{
+    font-size: 30px;
+    font-weight: bold;
+  }
+  .product-bottom h5{
+    font-size: 20px;
+    padding-bottom: 50px;
+  }
+  }
+  
+</style>
+
+
+<!-----------------------------------new products------------------------->
+
+
+
+<section class="new-products">
+  <div id="new-products">
+  <div class="container">
+    <div class="title-box">
+      <h1 id="np" style="margin-left: 13px;">New Arrivals</h1>
+    </div>
+    <div class="row" id="row2">
+      <div class="col-md-4">
+        <div class="product-top">
+          <a href="product.html"><img src="apple.png"/></a>
+          <div class="overlay-right">
+            <button type="button" class="btn btn-primary" title="Quick Shop"><i class="fa fa-eye"></i></button>
+            <button type="button" class="btn btn-primary" title="Add To Wishlist"><i class="fa fa-heart-o"></i></button>
+            <button type="button" onclick="cart()" class="btn btn-primary" title="Add To  Cart"><i class="fa fa-shopping-cart"></i></button>
+          </div>
+        </div>
+        <div class="product-bottom">
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <h2>title</h2>
+          <h5>$0.00</h5>
+        </div>
+    </div>
+    <div class="col-md-4">
+      <div class="product-top">
+        <a href="product.html"><img src="apple.png"/></a>
+        <div class="overlay-right">
+          <button type="button" class="btn btn-primary" title="Quick Shop"><i class="fa fa-eye"></i></button>
+          <button type="button" class="btn btn-primary" title="Add To Wishlist"><i class="fa fa-heart-o"></i></button>
+          <button type="button" onclick="cart()" class="btn btn-primary" title="Add To  Cart"><i class="fa fa-shopping-cart"></i></button>
+        </div>
+      </div>
+      <div class="product-bottom">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <h2>title</h2>
+        <h5>$0.00</h5>
+      </div>
+  </div>
+  <div class="col-md-4">
+    <div class="product-top">
+      <a href="product.html"><img src="apple.png"/></a>
+      <div class="overlay-right">
+        <button type="button" class="btn btn-primary" title="Quick Shop"><i class="fa fa-eye"></i></button>
+        <button type="button" class="btn btn-primary" title="Add To Wishlist"><i class="fa fa-heart-o"></i></button>
+        <button type="button" onclick="cart()" class="btn btn-primary" title="Add To  Cart"><i class="fa fa-shopping-cart"></i></button>
+      </div>
+    </div>
+    <div class="product-bottom">
+      <i class="fa fa-star"></i>
+      <i class="fa fa-star"></i>
+      <i class="fa fa-star"></i>
+      <i class="fa fa-star"></i>
+      <i class="fa fa-star"></i>
+      <h2>title</h2>
+      <h5>$0.00</h5>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="product-top">
+      <a href="product.html"><img src="apple.png"/></a>
+      <div class="overlay-right">
+        <button type="button" class="btn btn-primary" title="Quick Shop"><i class="fa fa-eye"></i></button>
+        <button type="button" class="btn btn-primary" title="Add To Wishlist"><i class="fa fa-heart-o"></i></button>
+        <button type="button" onclick="cart()" class="btn btn-primary" title="Add To  Cart"><i class="fa fa-shopping-cart"></i></button>
+      </div>
+    </div>
+    <div class="product-bottom">
+      <i class="fa fa-star"></i>
+      <i class="fa fa-star"></i>
+      <i class="fa fa-star"></i>
+      <i class="fa fa-star"></i>
+      <i class="fa fa-star"></i>
+      <h2>title</h2>
+      <h5>$0.00</h5>
+    </div>
+    </div>
+    <div class="col-md-4">
+      <div class="product-top">
+        <a href="product.html"><img src="apple.png"/></a>
+        <div class="overlay-right">
+          <button type="button" class="btn btn-primary" title="Quick Shop"><i class="fa fa-eye"></i></button>
+          <button type="button" class="btn btn-primary" title="Add To Wishlist"><i class="fa fa-heart-o"></i></button>
+          <button type="button" onclick="cart()" class="btn btn-primary" title="Add To  Cart"><i class="fa fa-shopping-cart"></i></button>
+        </div>
+      </div>
+      <div class="product-bottom">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <h2>title</h2>
+        <h5>$0.00</h5>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="product-top">
+        <a href="product.html"><img src="apple.png"/></a>
+        <div class="overlay-right">
+          <button type="button" class="btn btn-primary" title="Quick Shop"><i class="fa fa-eye"></i></button>
+          <button type="button" class="btn btn-primary" title="Add To Wishlist"><i class="fa fa-heart-o"></i></button>
+          <button type="button" onclick="cart()" class="btn btn-primary" title="Add To  Cart"><i class="fa fa-shopping-cart"></i></button>
+        </div>
+      </div>
+      <div class="product-bottom">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <h2>title</h2>
+        <h5>$0.00</h5>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="product-top">
+        <a href="product.html"><img src="apple.png"/></a>
+        <div class="overlay-right">
+          <button type="button" class="btn btn-primary" title="Quick Shop"><i class="fa fa-eye"></i></button>
+          <button type="button" class="btn btn-primary" title="Add To Wishlist"><i class="fa fa-heart-o"></i></button>
+          <button type="button" onclick="cart()" class="btn btn-primary" title="Add To  Cart"><i class="fa fa-shopping-cart"></i></button>
+        </div>
+      </div>
+      <div class="product-bottom">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <h2>title</h2>
+        <h5>$0.00</h5>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="product-top">
+        <a href="product.html"><img src="apple.png"/></a>
+        <div class="overlay-right">
+          <button type="button" class="btn btn-primary" title="Quick Shop"><i class="fa fa-eye"></i></button>
+          <button type="button" class="btn btn-primary" title="Add To Wishlist"><i class="fa fa-heart-o"></i></button>
+          <button type="button" onclick="cart()" class="btn btn-primary" title="Add To  Cart"><i class="fa fa-shopping-cart"></i></button>
+        </div>
+      </div>
+      <div class="product-bottom">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <h2>title</h2>
+        <h5>$0.00</h5>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="product-top">
+        <a href="product.html"><img src="apple.png"/></a>
+        <div class="overlay-right">
+          <button type="button" class="btn btn-primary" title="Quick Shop"><i class="fa fa-eye"></i></button>
+          <button type="button" class="btn btn-primary" title="Add To Wishlist"><i class="fa fa-heart-o"></i></button>
+          <button type="button" onclick="cart()" class="btn btn-primary" title="Add To  Cart"><i class="fa fa-shopping-cart"></i></button>
+        </div>
+      </div>
+      <div class="product-bottom">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <h2>title</h2>
+        <h5>$0.00</h5>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="product-top">
+        <a href="product.html"><img src="apple.png"/></a>
+        <div class="overlay-right">
+          <button type="button" class="btn btn-primary" title="Quick Shop"><i class="fa fa-eye"></i></button>
+          <button type="button" class="btn btn-primary" title="Add To Wishlist"><i class="fa fa-heart-o"></i></button>
+          <button type="button" onclick="cart()" class="btn btn-primary" title="Add To  Cart"><i class="fa fa-shopping-cart"></i></button>
+        </div>
+      </div>
+      <div class="product-bottom">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <h2>title</h2>
+        <h5>$0.00</h5>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="product-top">
+        <a href="product.html"><img src="apple.png"/></a>
+        <div class="overlay-right">
+          <button type="button" class="btn btn-primary" title="Quick Shop"><i class="fa fa-eye"></i></button>
+          <button type="button" class="btn btn-primary" title="Add To Wishlist"><i class="fa fa-heart-o"></i></button>
+          <button type="button" onclick="cart()" class="btn btn-primary" title="Add To  Cart"><i class="fa fa-shopping-cart"></i></button>
+        </div>
+      </div>
+      <div class="product-bottom">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <h2>title</h2>
+        <h5>$0.00</h5>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="product-top">
+        <a href="product.html"><img src="apple.png"/></a>
+        <div class="overlay-right">
+          <button type="button" class="btn btn-primary" title="Quick Shop"><i class="fa fa-eye"></i></button>
+          <button type="button" class="btn btn-primary" title="Add To Wishlist"><i class="fa fa-heart-o"></i></button>
+          <button type="button" onclick="cart()" class="btn btn-primary" title="Add To  Cart"><i class="fa fa-shopping-cart"></i></button>
+        </div>
+      </div>
+      <div class="product-bottom">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <h2>title</h2>
+        <h5>$0.00</h5>
+      </div>
+    </div>
+    </div>
+</section>
+<style>
+  #row2{
+    border-radius: 10px;
+    box-shadow: 0px 0px 100px black;
+
+    padding-top: 8%;
+    padding-right: 10%;
+    padding-left:5%;
+  }
+  #np{
+    font-size: 30px;
+  }
+  .new-products{
+    margin: 50px 0;
+  }
+</style>
+
+
+<!--------------------------features------------------------------->
+<h1 class="features-title">Our Features</h1>
+<section class="features" id="features">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-2 featured-box">
+        <img src="original.png">
+        <div class="featured-text">
+        </div>
+      </div>
+      <div class="col-md-2 featured-box">
+        <img src="fastdilivery.png">
+        <div class="featured-text">
+        </div>
+      </div>
+      <div class="col-md-2 featured-box">
+        <img src="customercare.png">
+        <div class="featured-text">
+        </div>
+      </div>
+      <div class="col-md-2 featured-box">
+        <img src="return.png">
+        <div class="featured-text">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<style>
+  .featured-box{
+    margin-left: 80px;
+    border-radius: 100%;
+  }
+  .features{
+    margin: 60px 0px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  .features img{
+    width: 100%;
+    border: 5px solid orange ;
+    border-radius: 100%;
+    padding: 10px;
+  }
+  .featured-box:hover img{
+    background: orange;
+  }
+  #bright{
+    display: none;
+  }
+  .features-title{
+      color: white;
+      background:rgb(0, 98, 255);
+      width: 180px;
+      padding: 4px 10px;
+      height: 50px;
+      display: flex;
+      margin-left: 600px;
+      font-size: 30px;
+      margin-top: 100px;
+  }
+  .features-title:after{
+    content: "";
+    border-bottom: 25px solid rgb(0, 98, 255);
+      border-top: 25px solid rgb(0, 98, 255);
+      border-right: 90px solid rgba(0, 0, 0, 0);
+      position: absolute;
+      display: flex;
+      margin-top: -4px;
+      margin-left: 170px;
+  }
+  .features-title::before{
+      content: "";
+      border-bottom: 25px solid rgb(0, 98, 255);
+      border-top: 25px solid rgb(0, 98, 255);
+      border-left: 90px solid rgba(188, 56, 56, 0);
+      position: absolute;
+      display: flex;
+      margin-top: -4px;
+      margin-left: -100px;
+  }
+</style>
+
+
+
+<!----------------------------footer------------------------------------------>
+
+
+
+<section class="footer" id="footer">
+  <div class="container tex-center">
+    <div class="row">
+      <div class="col-md-3">
+        <h1>Useful Links</h1>
+        <a href="#" title="Privacy Policy"><p>Privacy Policy</p></a>
+        <a href="#" title="Terms Of Use"><p>Terms Of Use</p></a>
+        <a href="#" title="Return Policy"><p>Return Policy</p></a>
+        <a href="#" title="Discount Coupons"><p>Discount Coupons</p></a>
+      </div>
+      <div class="col-md-3">
+        <h1>Company</h1>
+        <a href="#" title="About Us"><p>About Us</p></a>
+        <a href="#" title="Contact Us "><p>Contact Us</p></a>
+        <a href="#" title="Career"><p>Career</p></a>
+        <a href="#" title="Affiliate"><p>Affiliate</p></a>
+      </div>
+      <div class="col-md-3">
+        <h1>Follow Us On</h1>
+        <a href="#" title="Privacy Policy"><p><i class="fa fa-facebook-square" style="font-size: 20px; padding: 5px; transition: 1s;"></i>Facebook</p></a>
+        <a href="#" title="Terms Of Use"><p><i class="fa fa-youtube-play" style="font-size: 20px; padding: 5px; transition: 1s;"></i>Youtube</p></a>
+        <a href="#" title="Return Policy"><p><i class="fa fa-linkedin-square" style="font-size: 20px; padding: 5px; transition: 1s;"></i>Linked In</p></a>
+        <a href="#" title="Discount Coupons"><p><i class="fa fa-twitter-square" style="font-size: 20px; padding: 5px; transition: 1s;"></i>Twitter</p></a>
+      </div>
+      <div class="col-md-3 footer-image">
+        <h1>Download App</h1>
+        <a href="#"><img src="playstore.png" style="margin-left: -80px; border: 3px solid white; box-shadow: 0px 0px 20px white; transition: 0.5s;" class="p-store"></a><br>
+        <a href="#"><img src="appstore.png" style="margin-left: -80px; border: 3px solid white; box-shadow: 0px 0px 20px white; transition: 1s;" class="a-store"></a>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="fi">
+<div class="container">
+<a href="index.html"><img src="coderror2.png" style="width: 10%; margin-left: 45%;" class="footer-logo"></a>
+<h1 class="head2"><i>CRUX</i></h1>
+</div>
+</section>
+<style>
+  .head2{
+    margin-top: 2%;
+    margin-left: 45%;  
+    color: rgb(255, 255, 255); 
+    animation: color 3s infinite ease-in-out;
+    width: 10%;
+    padding: 10px 5px;
+    transition: 1s;
+    background: transparent;
+  }
+  @keyframes color {
+    50%{
+      color: orange;
+    }
+  }
+  
+  #fi{
+    animation: border 3s infinite ease-in-out;
+    background: orange;
+    margin-left: 0%;
+    border-radius: 0% 0% 100% 0%;
+    padding-bottom: 10%;
+  }
+  @keyframes border{
+    0%{
+      color: white;
+      background: orange;
+      border-radius: 100% 0% 0% 0%;
+    }
+    50%{
+      color: white;
+      background: #052457;
+      border-radius: 0% 100% 0% 0%;
+    }
+    100%{
+      color: white;
+      background: orange;
+      border-radius: 100% 0% 0% 0%;
+    }
+  }
+  .footer-logo{
+    position: relative;
+    margin-left: 0%;
+    width: 200%;
+    animation: footerimg 5s infinite ease-in-out;
+    box-shadow: 0px 0px 20px white;
+    border-radius: 100%;
+    margin-bottom: 10%;
+  }
+  @keyframes footerimg{
+    100%{
+      transform: rotate(360deg);
+    }
+  }
+  .p-store:hover{
+    transition: 0.5s;
+    background: black;
+  }
+  .a-store:hover{
+    transition: 1s;
+    background: black;
+  }
+.footer{
+  animation: borderfi 3s infinite ease-in-out;
+  border-radius: 0% 0% 100% 0%;
+  height: 50%;
+  background: orange;
+  color: white;
+}
+@keyframes borderfi{
+    0%{
+      color: orange;
+      background: #052457;
+      border-radius: 0% 0% 100% 0%;
+    }
+    50%{
+      color: white;
+      background: orange;
+      border-radius: 0% 0% 0% 100%;
+    }
+    100%{
+      color: orange;
+      background: #052457;
+      border-radius: 0% 0% 100% 0%;
+    }
+  }
+.fa-facebook-square:hover{
+  transition: 1s;
+  color:#0062ff;
+}
+.fa-youtube-play:hover{
+  transition: 1s;
+  color: red;
+}
+.fa-linkedin-square:hover{
+  transition: 1s;
+  color: #0177ff;
+}
+.fa-twitter-square:hover{
+  transition: 1s;
+  color: dodgerblue;
+}
+.footer a{
+  color: rgb(255, 255, 255);
+}
+.footer a:hover{
+  color: #0062ff;
+}
+.footer h1{
+  font-size: 25px;
+  margin: 20px 0;
+}
+.footer p{
+  font-size: 15px;
+}
+@media only screen and (max-width: 1200px){
+  #fi{
+    margin-top: 180%;
+  }
+  .footer-logo{
+    margin-top: 50px;
+  }
+}
+</style>
+
+
+
+<a title="Move To Top" id="scrollUp" href="#slider" style="display: block; position: fixed; z-index: 2147483647;" class="btn"><i class="push-up"></i>
+  <i class="fa fa-arrow-circle-up icon" aria-hidden="true"></i>
+</a>
+<style>
+  .btn {
+	width: 90px;
+	height: 25px;
+	border: 0;
+	border-radius: 2px;
+	outline: 0;
+	position: relative;
+	overflow: hidden;
+	transition: 0.2s ease-in-out;
+	box-shadow: 0 0px 2px rgb(0, 0, 0);
+}
+.icon {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	transition: all 0.15s linear;
+}
+.btn:hover {
+	cursor: pointer;
+	transform: scale(1.08);
+	box-shadow: 0 0px 50px rgba(0, 0, 0, 0.6);
+}
+.btn:hover .icon {
+	top: 50%;
+	animation: moveFromTop 0.15s linear forwards;
+	animation-delay: 0.15s;
+}
+@keyframes moveFromTop {
+	0% {
+		top: 150%;
+	}
+	100% {
+		top: 50%;
+  }
+}
+
+  #scrollUp {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    background: rgb(0, 102, 255) ;
+    z-index: 99;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    font-size: 20px;
+    color: white;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 100%;
+}
+#scrollUp:hover{
+  text-align: bottom;
+  width: 50px;
+  height: 50px;
+  font-size: 50px;
+  color: #0062ff;
+  background: rgb(255, 255, 255);
+}
+</style>
+</body>
+</html>
